@@ -68,36 +68,34 @@ body {
   position: relative;
   max-width: 480px;
   padding: 32px 28px 28px;
-  background: rgba(255, 255, 255, 0.12);
+  background: transparent;
   border-radius: 24px;
-  backdrop-filter: blur(18px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .card::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  padding: 2px;
-  background: linear-gradient(135deg, #ffe6eb, #ffd1ff, #fff);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-  opacity: 0.7;
+  content: none;
 }
 
 h1 {
   font-size: 1.9rem;
   margin-bottom: 16px;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.8);
 }
 
 .message {
   font-size: 0.98rem;
   line-height: 1.6;
   margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.75);
+}
+
+.response {
+  margin-top: 18px;
+  min-height: 22px;
+  font-size: 0.98rem;
+  font-weight: 500;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.75);
 }
 
 .highlight {
@@ -148,13 +146,6 @@ h1 {
 .btn:active {
   transform: translateY(0) scale(0.98);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.response {
-  margin-top: 18px;
-  min-height: 22px;
-  font-size: 0.98rem;
-  font-weight: 500;
 }
 
 .heart-pop {
@@ -228,8 +219,8 @@ h1 {
   <main class="card hidden" id="page2">
     <h1>Yay! You said YES 💗</h1>
     <p class="message">
-      Thank you for saying yes, Reiah. You just made one person
-      <span class="highlight">Jarmagne</span> very, very happy.
+      Thank you for saying yes, Reiah. You just made one person named
+         <span class="highlight">Jarmagne</span> very, very happy.
     </p>
     <p class="message">
       I can’t wait for our movie date on
