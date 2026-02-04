@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Yay! See you on Feb 15 💕</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="hearts-bg"></div>
+
+  <main class="card">
+    <h1>Yay! You said YES 💗</h1>
+    <p class="message">
+      Thank you for saying yes, Reiah. You just made one person 
+      <span class="highlight"></span> very, very happy.
+    </p>
+    <p class="message">
+      I can’t wait for our movie date on
+      <span class="highlight">February 15</span> —<br />
+      good film, your smile, and your hand in mine.
+    </p>
+    <p class="message">
+      Until then, just remember:<br />
+      you are my favorite notification, my favorite thought, and
+      my favorite person.
+    </p>
+
+    <div class="buttons-row">
+      <button class="btn yes" onclick="window.location.href='index.html'">
+        Back to the invite 💌
+      </button>
+    </div>
+  </main>
+
+  <script>
+    // spawn a few hearts when the page loads
+    function spawnHeart(x, y) {
+      const heart = document.createElement("div");
+      heart.textContent = "💖";
+      heart.className = "heart-pop";
+      heart.style.left = `${x}px`;
+      heart.style.top = `${y}px`;
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 1000);
+    }
+
+    window.addEventListener("load", () => {
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      for (let i = 0; i < 8; i++) {
+        const offsetX = (Math.random() - 0.5) * 200;
+        const offsetY = (Math.random() - 0.5) * 120;
+        spawnHeart(centerX + offsetX, centerY + offsetY);
+      }
+    });
+  </script>
+</body>
+</html>
+
