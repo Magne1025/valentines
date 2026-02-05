@@ -165,7 +165,7 @@ h1 {
 }
 
 .btn.no.playful {
-  position: absolute;
+  position: fixed;
 }
 
 .btn:hover {
@@ -364,12 +364,13 @@ h1 {
     function moveNoButton() {
       const cardRect = page1.getBoundingClientRect();
       const btnRect = noBtn.getBoundingClientRect();
+      const padding = 20;
 
-      const maxX = cardRect.width - btnRect.width - 16;
-      const maxY = cardRect.height - btnRect.height - 16;
+      const maxX = cardRect.width - btnRect.width - padding * 2;
+      const maxY = cardRect.height - btnRect.height - padding * 2;
 
-      const newX = Math.random() * Math.max(maxX, 0);
-      const newY = Math.random() * Math.max(maxY, 0);
+      const newX = cardRect.left + padding + Math.random() * Math.max(maxX, 0);
+      const newY = cardRect.top + padding + Math.random() * Math.max(maxY, 0);
 
       noBtn.style.left = `${newX}px`;
       noBtn.style.top = `${newY}px`;
